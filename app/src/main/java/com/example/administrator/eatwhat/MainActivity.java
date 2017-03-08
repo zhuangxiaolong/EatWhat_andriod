@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList al = new ArrayList();
-
+    String _strItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         }
         String str =tvMsg.getText()+"\n";
         tvMsg.setText(str);
-
+        _strItem= (String) tvMsg.getText();
     }
     public void BtnStart_Click(View view)
     {
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         String item=(String)al.get(index);
 
         TextView tvMsg = (TextView)findViewById(R.id.tvMsg);
+        tvMsg.setText(_strItem);
         String str =tvMsg.getText()+item+"\n";
         tvMsg.setText(str);
     }
